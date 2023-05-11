@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="code_grow.afeety.app.fragment.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_labsListFragment"
+            app:destination="@id/labsListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_labDetailsFragment"
+            app:destination="@id/labDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_hospitalsListFragment"
+            app:destination="@id/hospitalsListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pharmaciesListFragment"
+            app:destination="@id/pharmaciesListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_hospitalDetailsFragment"
+            app:destination="@id/hospitalDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pharmacyDetailsFragment"
+            app:destination="@id/pharmacyDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productsListFragment"
+            app:destination="@id/productsListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_moreFragment"
+            app:destination="@id/moreFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_famousInfoFragment"
+            app:destination="@id/famousInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_famousFragment"
+            app:destination="@id/famousFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_couponsFragment"
+            app:destination="@id/couponsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/labsListFragment"
+        android:name="code_grow.afeety.app.fragment.LabsFragment"
+        android:label="LabsListFragment">
+        <action
+            android:id="@+id/action_labsListFragment_to_labDetailsFragment"
+            app:destination="@id/labDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/labDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.LabDetailsFragment"
+        android:label="LabDetailsFragment">
+        <action
+            android:id="@+id/action_labDetailsFragment_to_reservationDetailsFragment"
+            app:destination="@id/reservationDetailsFragment" />
+        <argument
+            android:name="labDetails"
+            app:argType="code_grow.afeety.app.model.Lab" />
+    </fragment>
+    <fragment
+        android:id="@+id/reservationDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.ReservationDetailsFragment"
+        android:label="ReservationDetailsFragment">
+        <argument
+            android:name="selectedExaminations"
+            app:argType="code_grow.afeety.app.model.LabExamination[]" />
+        <argument
+            android:name="labDetails"
+            app:argType="code_grow.afeety.app.model.Lab" />
+        <action
+            android:id="@+id/action_reservationDetailsFragment_to_myReservationsFragment"
+            app:destination="@id/myReservationsFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hospitalsListFragment"
+        android:name="code_grow.afeety.app.fragment.HospitalsFragment"
+        android:label="HospitalsListFragment">
+        <action
+            android:id="@+id/action_hospitalsListFragment_to_hospitalDetailsFragment"
+            app:destination="@id/hospitalDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hospitalDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.HospitalDetailsFragment"
+        android:label="HospitalDetailsFragment">
+        <action
+            android:id="@+id/action_hospitalDetailsFragment_to_doctorDetailsFragment"
+            app:destination="@id/doctorDetailsFragment" />
+        <argument
+            android:name="hospitalDetails"
+            app:argType="code_grow.afeety.app.model.Hospital" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.DoctorDetailsFragment"
+        android:label="DoctorDetailsFragment">
+        <action
+            android:id="@+id/action_doctorDetailsFragment_to_doctorReservationFragment"
+            app:destination="@id/doctorReservationFragment" />
+        <argument
+            android:name="doctorDetails"
+            app:argType="code_grow.afeety.app.model.Doctor" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorReservationFragment"
+        android:name="code_grow.afeety.app.fragment.DoctorReservationFragment"
+        android:label="DoctorReservationFragment">
+        <argument
+            android:name="doctorDetails"
+            app:argType="code_grow.afeety.app.model.Doctor" />
+        <argument
+            android:name="selectedSchedule"
+            app:argType="code_grow.afeety.app.model.DoctorSchedule" />
+        <action
+            android:id="@+id/action_doctorReservationFragment_to_myReservationsFragment"
+            app:destination="@id/myReservationsFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pharmaciesListFragment"
+        android:name="code_grow.afeety.app.fragment.PharmaciesFragment"
+        android:label="PharmaciesListFragment">
+        <action
+            android:id="@+id/action_pharmaciesListFragment_to_pharmacyDetailsFragment"
+            app:destination="@id/pharmacyDetailsFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_pharmaciesListFragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment"
+            app:popUpTo="@id/pharmaciesListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/pharmacyDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.PharmacyDetailsFragment"
+        android:label="PharmacyDetailsFragment">
+        <argument
+            android:name="pharmacyDetails"
+            app:argType="code_grow.afeety.app.model.Pharmacy" />
+        <action
+            android:id="@+id/action_pharmacyDetailsFragment_to_medicinesFragment"
+            app:destination="@id/medicinesFragment" />
+        <action
+            android:id="@+id/action_pharmacyDetailsFragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment"
+            app:popUpTo="@id/pharmaciesListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_pharmacyDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsListFragment"
+        android:name="code_grow.afeety.app.fragment.ProductsFragment"
+        android:label="ProductsListFragment">
+        <action
+            android:id="@+id/action_productsListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_productsListFragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment"
+            app:popUpTo="@id/productsListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.ProductDetailsFragment"
+        android:label="ProductDetailsFragment" >
+        <argument
+            android:name="productDetails"
+            app:argType="code_grow.afeety.app.model.Product" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment"
+            app:popUpTo="@id/productsListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <!-- 0-> came from products fragment, 1-> come from famous fragment, 2-> come from famous info fragment -->
+        <argument
+            android:name="flag"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="code_grow.afeety.app.fragment.MoreFragment"
+        android:label="MoreFragment">
+        <action
+            android:id="@+id/action_moreFragment_to_myReservationsFragment"
+            app:destination="@id/myReservationsFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_myMedicalFilesFragment"
+            app:destination="@id/myMedicalFilesFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_brandsFragment"
+            app:destination="@id/brandsFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_myCouponsFragment"
+            app:destination="@id/myCouponsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myReservationsFragment"
+        android:name="code_grow.afeety.app.fragment.MyReservationsFragment"
+        android:label="MyReservationsFragment">
+        <action
+            android:id="@+id/action_myReservationsFragment_to_myLabReservationDetailsFragment"
+            app:destination="@id/myLabReservationDetailsFragment" />
+        <action
+            android:id="@+id/action_myReservationsFragment_to_myHospitalReservationDetailsFragment"
+            app:destination="@id/myHospitalReservationDetailsFragment" />
+        <argument
+            android:name="isLab"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/myLabReservationDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.MyLabReservationDetailsFragment"
+        android:label="MyLabReservationDetailsFragment">
+        <argument
+            android:name="bookingDetails"
+            app:argType="code_grow.afeety.app.model.LabBooking" />
+        <action
+            android:id="@+id/action_myLabReservationDetailsFragment_to_bookingExaminationsFragment"
+            app:destination="@id/bookingExaminationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myHospitalReservationDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.MyHospitalReservationDetailsFragment"
+        android:label="MyHospitalReservationDetailsFragment">
+        <argument
+            android:name="bookingDetails"
+            app:argType="code_grow.afeety.app.model.HospitalBooking" />
+    </fragment>
+    <fragment
+        android:id="@+id/myOrdersFragment"
+        android:name="code_grow.afeety.app.fragment.MyOrdersFragment"
+        android:label="MyOrdersFragment">
+        <action
+            android:id="@+id/action_myOrdersFragment_to_myPharmacyOrderProductsFragment"
+            app:destination="@id/myPharmacyOrderProductsFragment" />
+        <action
+            android:id="@+id/action_myOrdersFragment_to_myProductOrderProductsFragment"
+            app:destination="@id/myProductOrderProductsFragment" />
+        <action
+            android:id="@+id/action_myOrdersFragment_to_myFamousOrderProductsFragment"
+            app:destination="@id/myFamousOrderProductsFragment" />
+        <argument
+            android:name="index"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPharmacyOrderProductsFragment"
+        android:name="code_grow.afeety.app.fragment.MyPharmacyOrderProductsFragment"
+        android:label="MyPharmacyOrderProductsFragment">
+        <action
+            android:id="@+id/action_myPharmacyOrderProductsFragment_to_myPharmacyOrderProductDetailsFragment"
+            app:destination="@id/myPharmacyOrderProductDetailsFragment" />
+        <argument
+            android:name="prescription"
+            app:argType="string" />
+        <argument
+            android:name="medicines"
+            app:argType="code_grow.afeety.app.model.Medicine[]"
+            app:nullable="true" />
+        <argument
+            android:name="pharmacyName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPharmacyOrderProductDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.MyPharmacyOrderProductDetailsFragment"
+        android:label="MyPharmacyOrderProductDetailsFragment" />
+    <fragment
+        android:id="@+id/myProductOrderProductsFragment"
+        android:name="code_grow.afeety.app.fragment.MyProductOrderProductsFragment"
+        android:label="MyProductOrderProductsFragment">
+        <action
+            android:id="@+id/action_myProductOrderProductsFragment_to_myProductOrderProductDetailsFragment"
+            app:destination="@id/myProductOrderProductDetailsFragment" />
+        <argument
+            android:name="products"
+            app:argType="code_grow.afeety.app.model.SmallProduct[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProductOrderProductDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.MyProductOrderProductDetailsFragment"
+        android:label="MyProductOrderProductDetailsFragment" />
+    <fragment
+        android:id="@+id/myFamousOrderProductsFragment"
+        android:name="code_grow.afeety.app.fragment.MyFamousOrderProductsFragment"
+        android:label="MyFamousOrderProductsFragment">
+        <action
+            android:id="@+id/action_myFamousOrderProductsFragment_to_myFamousOrderProductDetailsFragment"
+            app:destination="@id/myFamousOrderProductDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myFamousOrderProductDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.MyFamousOrderProductDetailsFragment"
+        android:label="MyFamousOrderProductDetailsFragment" />
+    <fragment
+        android:id="@+id/myMedicalFilesFragment"
+        android:name="code_grow.afeety.app.fragment.MyMedicalFilesFragment"
+        android:label="MyMedicalFilesFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="code_grow.afeety.app.fragment.EditProfileFragment"
+        android:label="EditProfileFragment" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="code_grow.afeety.app.fragment.ContactUsFragment"
+        android:label="ContactUsFragment" />
+    <fragment
+        android:id="@+id/bookingExaminationsFragment"
+        android:name="code_grow.afeety.app.fragment.BookingExaminationsFragment"
+        android:label="BookingExaminationsFragment">
+        <argument
+            android:name="examinations"
+            app:argType="code_grow.afeety.app.model.LabExamination[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicinesFragment"
+        android:name="code_grow.afeety.app.fragment.MedicinesFragment"
+        android:label="MedicinesFragment">
+        <argument
+            android:name="pharmacyId"
+            app:argType="integer" />
+        <argument
+            android:name="query"
+            app:argType="string" />
+        <argument
+            android:name="banner"
+            app:argType="string" />
+        <argument
+            android:name="pharmacyName"
+            app:argType="string" />
+        <argument
+            android:name="categoryId"
+            app:argType="string" />
+        <argument
+            android:name="deliveryFees"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/famousInfoFragment"
+        android:name="code_grow.afeety.app.fragment.FamousInfoFragment"
+        android:label="FamousInfoFragment" >
+        <argument
+            android:name="famous"
+            app:argType="code_grow.afeety.app.model.Famous" />
+        <action
+            android:id="@+id/action_famousInfoFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_famousInfoFragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment"
+            app:popUpTo="@id/famousInfoFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="fromHome"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_famousInfoFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/brandInfoFragment"
+        android:name="code_grow.afeety.app.fragment.BrandInfoFragment"
+        android:label="BrandInfoFragment" >
+        <argument
+            android:name="brand"
+            app:argType="code_grow.afeety.app.model.Brand" />
+    </fragment>
+    <fragment
+        android:id="@+id/famousFragment"
+        android:name="code_grow.afeety.app.fragment.FamousFragment"
+        android:label="FamousFragment" >
+        <action
+            android:id="@+id/action_famousFragment_to_famousInfoFragment"
+            app:destination="@id/famousInfoFragment" />
+        <action
+            android:id="@+id/action_famousFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_famousFragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment"
+            app:popUpTo="@id/famousFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/brandsFragment"
+        android:name="code_grow.afeety.app.fragment.BrandsFragment"
+        android:label="BrandsFragment" >
+        <action
+            android:id="@+id/action_brandsFragment_to_brandInfoFragment"
+            app:destination="@id/brandInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/couponsFragment"
+        android:name="code_grow.afeety.app.fragment.CouponsFragment"
+        android:label="CouponsFragment" >
+        <action
+            android:id="@+id/action_couponsFragment_to_bookCouponFragment"
+            app:destination="@id/bookCouponFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookCouponFragment"
+        android:name="code_grow.afeety.app.fragment.BookCouponFragment"
+        android:label="BookCouponFragment" >
+        <argument
+            android:name="coupon"
+            app:argType="code_grow.afeety.app.model.Coupon" />
+    </fragment>
+    <fragment
+        android:id="@+id/myCouponsFragment"
+        android:name="code_grow.afeety.app.fragment.MyCouponsFragment"
+        android:label="MyCouponsFragment" >
+        <argument
+            android:name="couponType"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+</navigation>

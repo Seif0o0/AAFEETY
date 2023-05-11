@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/prescription_nav_grapgh"
+    app:startDestination="@id/sendPrescriptionFragment">
+
+    <fragment
+        android:id="@+id/sendPrescriptionFragment"
+        android:name="code_grow.afeety.app.fragment.SendPrescriptionFragment"
+        android:label="SendPrescriptionFragment" >
+        <action
+            android:id="@+id/action_sendPrescriptionFragment_to_preAddAddressFragment"
+            app:destination="@id/preAddAddressFragment" />
+        <action
+            android:id="@+id/action_sendPrescriptionFragment_to_preOrderDetailsFragment"
+            app:destination="@id/preOrderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/preAddAddressFragment"
+        android:name="code_grow.afeety.app.fragment.PreAddAddressFragment"
+        android:label="PreAddAddressFragment" >
+        <argument android:name="prescription"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_preAddAddressFragment_to_preOrderDetailsFragment"
+            app:destination="@id/preOrderDetailsFragment"
+            app:popUpTo="@id/preAddAddressFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/preOrderDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.PreOrderDetailsFragment"
+        android:label="PreOrderDetailsFragment" >
+        <argument
+            android:name="prescription"
+            app:argType="string" />
+        <argument
+            android:name="addressId"
+            app:argType="integer" />
+        <argument
+            android:name="addressDetails"
+            app:argType="string" />
+    </fragment>
+</navigation>

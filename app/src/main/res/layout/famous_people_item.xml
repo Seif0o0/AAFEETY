@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="famous"
+            type="code_grow.afeety.app.model.Famous" />
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnFamousItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onFamousClicked(famous)}"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/famous_image"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:adjustViewBounds="true"
+
+                android:src="@drawable/item_test"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="@dimen/_15sdp"
+                app:rounded_image_url="@{famous.sliderImage}" />
+
+            <TextView
+                android:id="@+id/departments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:fontFamily="@font/tajwal_medium"
+                android:gravity="start"
+                android:text="@{famous.name}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/home_black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/famous_image"
+                tools:text="Dr/Ahmed Ahmed Ahmed" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

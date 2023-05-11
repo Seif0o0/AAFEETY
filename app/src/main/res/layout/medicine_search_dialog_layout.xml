@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="code_grow.afeety.app.view_model.MedicineSearchViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/pharmacies_background_color"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/search_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:fontFamily="@font/tajwal_bold"
+                    android:gravity="center"
+                    android:text="@string/medicine_search_dialog_title"
+                    android:textColor="@color/pharmacies_filter_title_color"
+                    android:textSize="@dimen/_17ssp"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toTopOf="@id/top_guideline" />
+
+                <TextView
+                    android:id="@+id/medicine_name_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/tajwal_medium"
+                    android:gravity="center"
+                    android:text="@string/medicine_name_title"
+                    android:textColor="@color/pharmacies_main_text_color"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/search_title" />
+
+                <EditText
+                    android:id="@+id/medicine_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/selector_edit_text_background"
+                    android:fontFamily="@font/tajwal_medium"
+                    android:gravity="start"
+                    android:hint="@string/medicine_name_hint"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_9sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_9sdp"
+                    android:text="@={viewModel.queryLiveData}"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/login_register_main_color"
+                    android:textColorHint="@color/login_register_hint_color"
+                    android:textSize="@dimen/_12ssp"
+                    app:error_message="@{viewModel.queryErrorLiveData}"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/medicine_name_title" />
+
+                <TextView
+                    android:id="@+id/medicine_section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/tajwal_medium"
+                    android:gravity="center"
+                    android:text="@string/section_title"
+                    android:textColor="@color/pharmacies_main_text_color"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/medicine_name_edit_text" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/medicine_section_exposed_dropdown_menu"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/selector_edit_text_background"
+                    app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:endIconDrawable="@drawable/selector_drop_down_menu"
+                    app:endIconTint="@color/pharmacies_more_details_text_color"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/medicine_section">
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autocomplete_medicine_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/tajwal_medium"
+                        android:gravity="start"
+                        app:auto_complete_listener="@{true}"
+                        android:inputType="none"
+                        android:text="@={viewModel.categoriesLiveData}"
+                        android:hint="@string/section_hint"
+                        app:error_message="@{viewModel.categoriesErrorLiveData}"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingTop="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_9sdp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/pharmacies_main_text_color"
+                        android:textColorHint="@color/pharmacies_more_details_text_color"
+                        android:textSize="@dimen/_12ssp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/search_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:fontFamily="@font/tajwal_medium"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:insetBottom="0dp"
+                    android:text="@string/search"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pharmacies_background_color"
+                    android:textSize="@dimen/_12ssp"
+                    android:theme="@style/Theme.MaterialComponents"
+                    app:backgroundTint="@color/pharmacies_main_color"
+                    app:cornerRadius="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+                    app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                    app:layout_constraintStart_toStartOf="@id/start_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/medicine_section_exposed_dropdown_menu" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/top_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bottom_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="@dimen/_15sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/start_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/end_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_15sdp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                android:id="@+id/error_view"
+                layout="@layout/small_error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:visibility="gone"
+                app:resource="@{viewModel.medicineCategoriesResponse}" />
+
+            <include
+                android:id="@+id/loading_view"
+                layout="@layout/loading_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:visibility="gone"
+                app:resource="@{viewModel.medicineCategoriesResponse}" />
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

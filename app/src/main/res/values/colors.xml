@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="loader_frame_background">#66000000</color>
+    <color name="error_dialog_message_color">#000</color>
+    <color name="error_dialog_dismiss_text_color">#FFF</color>
+    <color name="error_dialog_dismiss_text_background_color">#FF0000</color>
+    <color name="error_dialog_retry_text_background_color">#00FF00</color>
+    <color name="empty_list_text_color">#747474</color>
+    <color name="error_layout_retry_text_color">#747474</color>
+    <color name="no_internet_connection_animation_color">#00679E</color>
+    <color name="success_dialog_button_background">#00679E</color>
+    <color name="error_layout_background_color">#F0F4F6</color>
+    <color name="search_background_color">#FFF</color>
+    <color name="ask_now_background_color">#4DFFFFFF</color>
+    <color name="intro_text_color">#00669B</color>
+
+    <!-- header photo -->
+    <color name="main_blue_header_color">#E6117EC0</color>
+    <color name="main_green_header_color">#E61CC7BB</color>
+    <color name="main_orange_header_color">#E6F0923B</color>
+    <color name="main_dark_orange_header_color">#E6EE6D53</color>
+
+    <color name= "header_start_color">#04A5A9</color>
+    <color name= "header_end_color">#00679E</color>
+
+    <!-- splash-introduction -->
+    <color name="splash_introduction_main_background_color">#F0F4F6</color>
+    <color name="splash_introduction_main_color">#00679E</color>
+    <color name="splash_introduction_titles_color">#000000</color>
+    <color name="splash_introduction_details_color">#6E6E6E</color>
+    <color name="splash_introduction_next_btn_color">#FFF</color>
+    <color name="splash_introduction_skip_btn_color">#747474</color>
+    <color name="splash_introduction_active_indicator_color">#00679E</color>
+    <color name="splash_introduction_inactive_indicator_color">#747474</color>
+
+    <!-- login-register -->
+    <color name="login_register_main_color">#000</color>
+    <color name="login_register_sub_main_color">#00679E</color>
+    <color name="login_register_title_color">#23233C</color>
+    <color name="login_register_hint_color">#6E6E6E</color>
+    <color name="login_register_whole_background_color">#F0F4F6</color>
+    <color name="login_register_main_background_color">#F0F4F6</color>
+    <color name="login_register_sub_background_color">#FFF</color>
+    <color name="login_register_borders_color">#F0923B</color>
+    <color name="login_register_lines_color">#E3E3E3</color>
+
+
+    <!-- home -->
+    <color name="home_background_color">#F0F4F6</color>
+    <color name="home_white">#FFF</color>
+    <color name="home_black">#000</color>
+    <color name="home_main_color">#00679E</color>
+    <color name="home_lines_color">#747474</color>
+    <color name="home_details_color">#747474</color>
+    <color name="home_labs_text_color">@color/home_main_color</color>
+    <color name="home_hospitals_text_color">@color/home_main_color</color>
+    <color name="home_pharmacies_text_color">@color/home_main_color</color>
+    <color name="home_medical_products_text_color">@color/home_main_color</color>
+    <color name="home_rate_text_color">#EDB600</color>
+
+    <!-- Labs -->
+    <color name="labs_background_color">#F0F4F6</color>
+    <color name="labs_mini_background_color">#F1FAFF</color>
+    <color name="labs_second_mini_background_color">#FFF</color>
+    <color name="labs_third_mini_background_color">#00679E12</color>
+    <color name="labs_main_color">#00679E</color>
+    <color name="labs_lines_color">#F2F2F2</color>
+    <color name="labs_second_lines_color">#EAEAEA</color>
+    <color name="labs_main_text_color">#000000</color>
+    <color name="labs_details_text_color">#747474</color>
+    <color name="labs_more_details_text_color">#6E6E6E</color>
+    <color name="labs_rates_color">#EDB600</color>
+    <color name="labs_filter_title_color">#23233C</color>
+
+    <!-- Hospitals -->
+    <color name="hospitals_background_color">#F0F4F6</color>
+    <color name="hospitals_mini_background_color">#E0F2F5</color>
+    <color name="hospitals_second_mini_background_color">#FFF</color>
+    <color name="hospitals_third_mini_background_color">#00679E12</color>
+    <color name="hospitals_main_color">#00679E</color>
+    <color name="hospitals_lines_color">#F2F2F2</color>
+    <color name="hospitals_second_lines_color">#EAEAEA</color>
+    <color name="hospitals_main_text_color">#000000</color>
+    <color name="hospitals_details_text_color">#747474</color>
+    <color name="hospitals_more_details_text_color">#6E6E6E</color>
+    <color name="hospitals_hint_color">#6E6E6E</color>
+    <color name="hospitals_rates_color">#EDB600</color>
+    <color name="hospitals_filter_title_color">#23233C</color>
+
+
+    <!-- Pharmacies -->
+    <color name="pharmacies_background_color">#F0F4F6</color>
+    <color name="pharmacies_mini_background_color">#E0F2F5</color>
+    <color name="pharmacies_second_mini_background_color">#FFF</color>
+    <color name="pharmacies_third_mini_background_color">#00679E12</color>
+    <color name="pharmacies_main_color">#00679E</color>
+    <color name="pharmacies_lines_color">#F2F2F2</color>
+    <color name="pharmacies_second_lines_color">#EAEAEA</color>
+    <color name="pharmacies_main_text_color">#000000</color>
+    <color name="pharmacies_details_text_color">#747474</color>
+    <color name="pharmacies_more_details_text_color">#6E6E6E</color>
+    <color name="pharmacies_hint_color">#6E6E6E</color>
+    <color name="pharmacies_rates_color">#EDB600</color>
+    <color name="pharmacies_filter_title_color">#23233C</color>
+
+    <!-- Medical Products -->
+    <color name="products_background_color">#F0F4F6</color>
+    <color name="products_mini_background_color">#E0F2F5</color>
+    <color name="products_second_mini_background_color">#FFF</color>
+    <color name="products_third_mini_background_color">#00679E12</color>
+    <color name="products_main_color">#00679E</color>
+    <color name="products_lines_color">#F2F2F2</color>
+    <color name="products_second_lines_color">#EAEAEA</color>
+    <color name="products_main_text_color">#000000</color>
+    <color name="products_details_text_color">#747474</color>
+    <color name="products_more_details_text_color">#6E6E6E</color>
+    <color name="products_hint_color">#6E6E6E</color>
+    <color name="products_rates_color">#EDB600</color>
+    <color name="products_filter_title_color">#23233C</color>
+
+    <!-- More -->
+    <color name="more_main_color">#00679E</color>
+    <color name="more_headers_color">#000</color>
+    <color name="more_title_color">#fff</color>
+    <color name="more_welcome_color">#747474</color>
+    <color name="more_line_color">#EAEAEA</color>
+
+    <!-- My reservations -->
+    <color name="my_reservations_done_status_color">#FF4B38</color>
+
+    <!-- Medical files -->
+    <color name="medical_files_titles_color">#000</color>
+    <color name="medical_files_main_color">#00679E</color>
+    <color name="medical_files_light_color">#F6F6FA</color>
+    <color name="medical_files_background_color">#fff</color>
+
+    <!-- contact us -->
+    <color name="contact_us_primary_dark">#000</color>
+    <color name="contact_us_semi_primary_dark">#00679E</color>
+    <color name="contact_us_hint_text_color">#747474</color>
+    <color name="contact_us_main_background">#F0F4F6</color>
+    <color name="contact_us_sub_background">#F7F7FB</color>
+
+    <!-- cart -->
+    <color name="cart_main_color">#00679E</color>
+    <color name="cart_title_color">#000000</color>
+    <color name="cart_details_color">#747474</color>
+    <color name="cart_header_color">#FFFFFF</color>
+    <color name="cart_second_background_color">#FFFFFF</color>
+    <color name="cart_background_color">#F0F4F6</color>
+    <color name="cart_lines_color">#EAEAEA</color>
+    <color name="cart_hint_color">#6E6E6E</color>
+
+    <!-- famous -->
+    <color name="famous_title_color">#ffffff</color>
+    <color name="famous_background_color">#ffffff</color>
+    <color name="famous_main_title_color">#000000</color>
+    <color name="famous_main_color">#00679E</color>
+    <color name="famous_hint_color">#747474</color>
+    <color name="famous_lines_color">#F7F7FB</color>
+
+    <!-- Medical Products -->
+    <color name="ask_doctor_background_color">#F0F4F6</color>
+    <color name="ask_doctor_mini_background_color">#E0F2F5</color>
+    <color name="ask_doctor_second_mini_background_color">#FFF</color>
+    <color name="ask_doctor_third_mini_background_color">#00679E12</color>
+    <color name="ask_doctor_main_color">#00679E</color>
+    <color name="ask_doctor_lines_color">#F2F2F2</color>
+    <color name="ask_doctor_second_lines_color">#EAEAEA</color>
+    <color name="ask_doctor_main_text_color">#000000</color>
+    <color name="ask_doctor_details_text_color">#747474</color>
+    <color name="ask_doctor_more_details_text_color">#6E6E6E</color>
+    <color name="ask_doctor_hint_color">#6E6E6E</color>
+    <color name="ask_doctor_rates_color">#EDB600</color>
+    <color name="ask_doctor_filter_title_color">#23233C</color>
+
+
+    <!-- coupons -->
+    <color name="coupons_title_color">#ffffff</color>
+    <color name="coupons_background_color">#ffffff</color>
+    <color name="coupons_main_title_color">#000000</color>
+    <color name="coupons_main_color">#00679E</color>
+    <color name="coupons_hint_color">#747474</color>
+    <color name="coupons_lines_color">#F7F7FB</color>
+    <color name="coupons_headers_color">#F0F4F6</color>
+</resources>

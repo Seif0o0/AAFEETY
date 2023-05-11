@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="coupon"
+            type="code_grow.afeety.app.model.Coupon" />
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnCouponsItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        app:cardBackgroundColor="@color/coupons_background_color"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:onClick="@{()-> clickListener.onCouponClicked(coupon)}"
+        app:cardUseCompatPadding="true">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:riv_corner_radius="@dimen/_8sdp"
+            app:rounded_image_url="@{coupon.image}"
+            tools:src="@drawable/item_test" />
+    </androidx.cardview.widget.CardView>
+</layout>

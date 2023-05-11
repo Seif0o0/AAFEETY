@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="code_grow.afeety.app.view_model.RegisterViewModel" />
+
+        <variable
+            name="error"
+            type="String" />
+
+        <variable
+            name="cancelAnimation"
+            type="Boolean" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/login_register_whole_background_color"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/header_view"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_225sdp"
+                    android:background="@drawable/rounded_header_drawable"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:src="@mipmap/logo"
+                    app:layout_constraintBottom_toBottomOf="@id/header_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.4" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    app:cardBackgroundColor="@color/login_register_main_background_color"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logo"
+                    app:layout_constraintVertical_bias="0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/register_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajwal_bold"
+                            android:gravity="center"
+                            android:text="@string/register_title"
+                            android:textColor="@color/login_register_title_color"
+                            android:textSize="@dimen/_17ssp"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toTopOf="@id/top_guideline" />
+
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/profile_picture"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+
+                            android:src="@drawable/ic_launcher_background"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/register_title"
+                            app:riv_corner_radius="@dimen/_50sdp" />
+
+                        <ImageView
+                            android:id="@+id/change_profile_picture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:src="@drawable/ic_change_photo_icon"
+                            app:layout_constraintBottom_toBottomOf="@id/profile_picture"
+                            app:layout_constraintStart_toStartOf="@id/profile_picture" />
+
+                        <!-- username -->
+                        <TextView
+                            android:id="@+id/username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/username"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/profile_picture" />
+
+                        <EditText
+                            android:id="@+id/username_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/selector_edit_text_background"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="start"
+                            android:hint="@string/username_hint"
+                            android:inputType="textPersonName"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_9sdp"
+                            android:paddingEnd="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_9sdp"
+                            android:text="@={viewModel.userNameLiveData}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/login_register_main_color"
+                            android:textColorHint="@color/login_register_hint_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:error_message="@{viewModel.userNameErrorLiveData}"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/username" />
+
+                        <!-- phone number -->
+                        <TextView
+                            android:id="@+id/phone_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/phone_number"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/username_edit_text" />
+
+                        <View
+                            android:id="@+id/phone_number_edit_text_background"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/selector_edit_text_background"
+                            app:layout_constraintBottom_toBottomOf="@id/phone_number_edit_text"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/phone_number" />
+
+                        <TextView
+                            android:id="@+id/country_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:text="+966"
+                            android:textColor="@color/login_register_hint_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="@id/vertical_line"
+                            app:layout_constraintLeft_toLeftOf="@id/phone_number_edit_text_background"
+                            app:layout_constraintRight_toLeftOf="@id/vertical_line"
+                            app:layout_constraintTop_toTopOf="@id/vertical_line" />
+
+                        <View
+                            android:id="@+id/vertical_line"
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="@dimen/_9sdp"
+                            android:layout_marginBottom="@dimen/_9sdp"
+                            android:background="@color/login_register_lines_color"
+                            app:layout_constraintBottom_toBottomOf="@id/phone_number_edit_text"
+                            app:layout_constraintLeft_toRightOf="@id/country_code"
+                            app:layout_constraintRight_toLeftOf="@id/phone_number_edit_text"
+                            app:layout_constraintTop_toTopOf="@id/phone_number_edit_text" />
+
+                        <EditText
+                            android:id="@+id/phone_number_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="start"
+                            android:hint="@string/phone_number_hint"
+                            android:inputType="number"
+                            android:paddingTop="@dimen/_9sdp"
+                            android:paddingBottom="@dimen/_9sdp"
+                            android:text="@={viewModel.phoneNumberLiveData}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/login_register_main_color"
+                            android:textColorHint="@color/login_register_hint_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:error_message="@{viewModel.phoneNumberErrorLiveData}"
+                            app:layout_constraintLeft_toRightOf="@id/vertical_line"
+                            app:layout_constraintRight_toRightOf="@id/phone_number_edit_text_background"
+                            app:layout_constraintTop_toTopOf="@id/phone_number_edit_text_background"
+                            tools:ignore="TextFields" />
+
+                        <!-- email -->
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/email"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/phone_number_edit_text_background" />
+
+                        <EditText
+                            android:id="@+id/email_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/selector_edit_text_background"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="start"
+                            android:hint="@string/email_hint"
+                            android:inputType="textEmailAddress"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_9sdp"
+                            android:paddingEnd="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_9sdp"
+                            android:text="@={viewModel.emailLiveData}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/login_register_main_color"
+                            android:textColorHint="@color/login_register_hint_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:error_message="@{viewModel.emailErrorLiveData}"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/email" />
+
+                        <!-- Age -->
+                        <TextView
+                            android:id="@+id/age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/age"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
+
+                        <EditText
+                            android:id="@+id/age_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/selector_edit_text_background"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="start"
+                            android:hint="@string/age_hint"
+                            android:inputType="number"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_9sdp"
+                            android:paddingEnd="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_9sdp"
+                            android:text="@={viewModel.ageLiveData}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/login_register_main_color"
+                            android:textColorHint="@color/login_register_hint_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:error_message="@{viewModel.ageErrorLiveData}"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/age" />
+
+
+                        <!-- gender -->
+                        <TextView
+                            android:id="@+id/gender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/gender"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/age_edit_text" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/gender_exposed_dropdown_menu"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/selector_edit_text_background"
+                            app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                            app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="0dp"
+                            app:endIconDrawable="@drawable/selector_drop_down_menu"
+                            app:endIconTint="@color/login_register_hint_color"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/gender">
+
+
+                            <AutoCompleteTextView
+                                android:id="@+id/autocomplete_gender"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/tajwal_medium"
+                                android:gravity="start"
+                                android:hint="@string/gender_hint"
+                                android:inputType="none"
+                                android:paddingStart="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_9sdp"
+                                android:paddingEnd="@dimen/_8sdp"
+                                android:paddingBottom="@dimen/_9sdp"
+                                android:text="@={viewModel.genderLiveData}"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/login_register_main_color"
+                                android:textColorHint="@color/login_register_hint_color"
+                                android:textSize="@dimen/_12ssp"
+                                app:auto_complete_listener="@{true}"
+                                app:drop_down_list="@{@stringArray/gender}"
+                                app:error_message="@{viewModel.genderErrorLiveData}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- city -->
+                        <TextView
+                            android:id="@+id/city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/city"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/gender_exposed_dropdown_menu" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/city_exposed_dropdown_menu"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/selector_edit_text_background"
+                            app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                            app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="0dp"
+                            app:endIconDrawable="@drawable/selector_drop_down_menu"
+                            app:endIconTint="@color/login_register_hint_color"
+                            app:hintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/city">
+
+
+                            <AutoCompleteTextView
+                                android:id="@+id/autocomplete_city"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/tajwal_medium"
+                                android:gravity="start"
+                                android:hint="@string/city_hint"
+                                android:inputType="none"
+                                android:paddingStart="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_9sdp"
+                                android:paddingEnd="@dimen/_8sdp"
+                                android:paddingBottom="@dimen/_9sdp"
+                                android:text="@={viewModel.cityLiveData}"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/login_register_main_color"
+                                android:textColorHint="@color/login_register_hint_color"
+                                android:textSize="@dimen/_12ssp"
+                                app:auto_complete_listener="@{true}"
+                                app:error_message="@{viewModel.cityErrorLiveData}" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/password"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/city_exposed_dropdown_menu" />
+
+                        <EditText
+                            android:id="@+id/password_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/selector_edit_text_background"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="start"
+                            android:hint="@string/password_hint"
+                            android:inputType="textPassword"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_9sdp"
+                            android:paddingEnd="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_9sdp"
+                            android:text="@={viewModel.passwordLiveData}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/login_register_main_color"
+                            android:textColorHint="@color/login_register_hint_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:error_message="@{viewModel.passwordErrorLiveData}"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/password" />
+
+                        <TextView
+                            android:id="@+id/confirmation_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/confirmation_password"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/password_edit_text" />
+
+                        <EditText
+                            android:id="@+id/confirmation_password_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/selector_edit_text_background"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="start"
+                            android:hint="@string/confirmation_password_hint"
+                            android:inputType="textPassword"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_9sdp"
+                            android:paddingEnd="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_9sdp"
+                            android:text="@={viewModel.confirmPasswordLiveData}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/login_register_main_color"
+                            android:textColorHint="@color/login_register_hint_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:error_message="@{viewModel.confirmPasswordErrorLiveData}"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/confirmation_password" />
+
+
+                        <ImageView
+                            android:id="@+id/terms_and_conditions_check_box"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:src="@drawable/ic_register_empty_check_box"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/confirmation_password_edit_text"
+                            app:terms_conditions_status="@{viewModel.termsConditionsLiveData}" />
+
+                        <TextView
+                            android:id="@+id/terms_and_conditions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/terms_and_conditions"
+                            android:textColor="@color/login_register_main_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="@id/terms_and_conditions_check_box"
+                            app:layout_constraintStart_toEndOf="@id/terms_and_conditions_check_box"
+                            app:layout_constraintTop_toTopOf="@id/terms_and_conditions_check_box" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="@font/tajwal_regular"
+                            android:text="@string/terms_conditions_error_message"
+                            android:textColor="@color/my_reservations_done_status_color"
+                            android:textSize="@dimen/_8ssp"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/terms_and_conditions_check_box"
+                            app:layout_constraintTop_toBottomOf="@id/terms_and_conditions_check_box"
+                            app:terms_conditions_error="@{viewModel.termsConditionsErrorLiveData}" />
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/register_button"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:insetLeft="0dp"
+                            android:insetTop="0dp"
+                            android:insetRight="0dp"
+                            android:insetBottom="0dp"
+                            android:text="@string/register"
+                            android:textAllCaps="false"
+                            android:textColor="@color/login_register_main_background_color"
+                            android:textSize="@dimen/_12ssp"
+                            android:theme="@style/Theme.MaterialComponents"
+                            app:backgroundTint="@color/login_register_sub_main_color"
+                            app:cornerRadius="@dimen/_20sdp"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/terms_and_conditions" />
+
+                        <TextView
+                            android:id="@+id/login_question"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/login_question"
+                            android:textColor="@color/login_register_hint_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+                            app:layout_constraintEnd_toStartOf="@id/login"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="@id/start_guideline"
+                            app:layout_constraintTop_toBottomOf="@id/register_button" />
+
+                        <TextView
+                            android:id="@+id/login"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/underlined_login"
+                            android:textColor="@color/login_register_sub_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintBaseline_toBaselineOf="@id/login_question"
+                            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                            app:layout_constraintStart_toEndOf="@id/login_question" />
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/top_guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/bottom_guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_end="@dimen/_30sdp" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/start_guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/end_guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_end="@dimen/_15sdp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/error_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/error_layout_background_color"
+            android:translationZ="2dp"
+            android:visibility="gone"
+            app:failed_state="@{viewModel.citiesResponse}">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/error_animation"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:cancel_animation="@{cancelAnimation}"
+                app:layout_constraintBottom_toTopOf="@id/error_message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.4"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:play_animation="@{error}" />
+
+            <TextView
+                android:id="@+id/error_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:fontFamily="@font/tajwal_medium"
+                android:gravity="center"
+                android:text="@{error}"
+                android:textColor="@color/error_dialog_message_color"
+                android:textSize="@dimen/_17ssp"
+                app:layout_constraintBottom_toTopOf="@id/tap_to_retry"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/error_animation"
+                tools:text="No internet connection" />
+
+            <TextView
+                android:id="@+id/tap_to_retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/tajwal_regular"
+                android:text="@string/tap_to_retry"
+                android:textColor="@color/error_layout_retry_text_color"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/error_message" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:translationZ="2dp"
+            android:visibility="@{viewModel.progressState}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/loader"
+                style="@style/SpinKitView.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:SpinKit_Color="@color/labs_main_color" />
+        </FrameLayout>
+    </FrameLayout>
+
+
+</layout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="lab"
+            type="code_grow.afeety.app.model.Lab" />
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnLabItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{ () -> clickListener.onLabClicked(lab)}"
+        app:cardBackgroundColor="@color/home_white"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/lab_image"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="@dimen/_8ssp"
+                app:rounded_image_url="@{lab.labImage}" />
+
+            <TextView
+                android:id="@+id/lab_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/tajwal_medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{lab.name}"
+                android:textColor="@color/home_black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/lab_image"
+                app:layout_constraintStart_toStartOf="@id/lab_image"
+                app:layout_constraintTop_toBottomOf="@id/lab_image"
+                tools:text="lab name" />
+
+            <ImageView
+                android:id="@+id/rate_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:src="@drawable/ic_rate"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/lab_image"
+                app:layout_constraintStart_toEndOf="@id/rate_average"
+                app:layout_constraintTop_toBottomOf="@id/lab_name" />
+
+            <TextView
+                android:id="@+id/rate_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:textColor="@color/home_rate_text_color"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintBottom_toBottomOf="@id/rate_icon"
+                app:layout_constraintEnd_toStartOf="@id/rate_icon"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/lab_image"
+                app:layout_constraintTop_toTopOf="@id/rate_icon"
+                app:rate="@{lab.avgRate}"
+                tools:text="3.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="hospital"
+            type="code_grow.afeety.app.model.Hospital" />
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnHospitalItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{ () -> clickListener.onHospitalClicked(hospital)}"
+        app:cardBackgroundColor="@color/home_white"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/hospital_image"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:rounded_image_url="@{hospital.hospitalImage}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="@dimen/_8sdp"
+                tools:src="@drawable/item_test" />
+
+            <TextView
+                android:id="@+id/hospital_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/tajwal_medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{hospital.name}"
+                android:textColor="@color/home_black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/hospital_image"
+                app:layout_constraintStart_toStartOf="@id/hospital_image"
+                app:layout_constraintTop_toBottomOf="@id/hospital_image"
+                tools:text="hospital hospital hospital" />
+
+            <ImageView
+                android:id="@+id/rate_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:src="@drawable/ic_rate"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/hospital_image"
+                app:layout_constraintStart_toEndOf="@id/rate_average"
+                app:layout_constraintTop_toBottomOf="@id/hospital_name" />
+
+            <TextView
+                android:id="@+id/rate_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:textColor="@color/home_rate_text_color"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintBottom_toBottomOf="@id/rate_icon"
+                app:layout_constraintEnd_toStartOf="@id/rate_icon"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/hospital_image"
+                app:layout_constraintTop_toTopOf="@id/rate_icon"
+                app:rate="@{hospital.avgRate}"
+                tools:text="3.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

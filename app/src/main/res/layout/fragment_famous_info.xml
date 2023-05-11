@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="famous"
+            type="code_grow.afeety.app.model.Famous" />
+
+
+        <variable
+            name="viewModel"
+            type="code_grow.afeety.app.view_model.FamousInfoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/rounded_header_drawable"
+            app:layout_collapseMode="parallax"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:elevation="0dp">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/header_drawable"
+                    android:elevation="0dp"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed|exitUntilCollapsed"
+                    app:popupTheme="@style/AppTheme"
+                    app:titleEnabled="false">
+
+                    <View
+                        android:id="@+id/header_view"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_220sdp"
+                        android:background="@drawable/rounded_header_drawable"
+                        app:layout_collapseMode="parallax"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:contentInsetEnd="0dp"
+                        app:contentInsetEndWithActions="0dp"
+                        app:contentInsetStart="0dp"
+                        app:contentInsetStartWithNavigation="0dp"
+                        app:layout_collapseMode="pin"
+                        app:title="">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top">
+
+                            <ImageView
+                                android:id="@+id/navigate_back"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:scaleX="-1"
+                                android:src="@drawable/ic_white_back_with_background"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/cart_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:src="@drawable/ic_cart"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/products_title"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:fontFamily="@font/tajwal_bold"
+                                android:gravity="center"
+                                android:text="@{famous.name}"
+                                android:textColor="@color/products_background_color"
+                                android:textSize="@dimen/_17ssp"
+                                app:layout_constraintBottom_toBottomOf="@id/navigate_back"
+                                app:layout_constraintEnd_toStartOf="@id/cart_icon"
+                                app:layout_constraintStart_toEndOf="@id/navigate_back"
+                                app:layout_constraintTop_toTopOf="@id/navigate_back" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.appcompat.widget.Toolbar>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_fragments_top_rounded_background"
+                android:fillViewport="true"
+                app:behavior_overlapTop="@dimen/_100sdp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/banner"
+
+                        android:layout_marginTop="@dimen/_15sdp"
+                        app:riv_corner_radius="@dimen/_8sdp"
+                        app:rounded_image_url="@{famous.sliderImage}"
+                        android:layout_width="0dp"
+                        tools:src="@drawable/item_test"
+                        android:layout_height="@dimen/_120sdp"
+                        app:layout_constraintEnd_toEndOf="@id/scroll_end_guideline"
+                        app:layout_constraintStart_toStartOf="@id/scroll_start_guideline"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/products_list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/scroll_end_guideline"
+                        app:layout_constraintStart_toStartOf="@id/scroll_start_guideline"
+                        app:layout_constraintTop_toBottomOf="@id/banner"
+                        app:layout_constraintVertical_bias="0"
+                        app:spanCount="2"
+                        tools:itemCount="6"
+                        tools:listitem="@layout/product_item" />
+
+
+                    <TextView
+                        android:id="@+id/empty_products_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/tajwal_medium"
+                        android:text="@string/empty_products_text"
+                        android:textColor="@color/empty_list_text_color"
+                        android:textSize="@dimen/_10ssp"
+                        app:empty_list_state="@{viewModel.productsResponse}"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/scroll_end_guideline"
+                        app:layout_constraintStart_toStartOf="@id/scroll_start_guideline"
+                        app:layout_constraintTop_toBottomOf="@id/banner"
+                        tools:visibility="gone" />
+
+                    <include
+                        android:id="@+id/products_error_view"
+                        layout="@layout/small_error_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/banner"
+                        app:layout_constraintVertical_bias="0"
+                        app:resource="@{viewModel.productsResponse}" />
+
+                    <include
+                        android:id="@+id/products_loading_view"
+                        layout="@layout/small_loading_view"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/banner"
+                        app:layout_constraintVertical_bias="0"
+                        app:resource="@{viewModel.productsResponse}" />
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/scroll_start_guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/scroll_end_guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/_15sdp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_15sdp" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

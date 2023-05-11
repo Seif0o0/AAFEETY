@@ -1,0 +1,413 @@
+<resources>
+    <string name="app_name">AAFEETY</string>
+    <string name="google_map_api_key" translatable="false">AIzaSyB6FtH0ka94306fQ9VOsIvq4FQodTzcCow</string>
+    <string name="google_map_api_key_1" translatable="false">AIzaSyA9Qod1kZPKd8xsRSyoYqBXh0YZsnI0fhk</string>
+
+    <!-- location library strings -->
+    <string name="locus_location_resolution_title">Location is currently disabled</string>
+    <string name="locus_location_resolution_message">Please enable access to device location to get better experience</string>
+    <string name="enable">Enable</string>
+    <string name="cancel">Cancel</string>
+    <!--    -->
+
+    <string name="home_title">Home</string>
+    <string name="ask_doctor_title">Ask doctor</string>
+    <string name="medical_events_title">Medical events</string>
+    <string name="app_magazine_title">App magazine</string>
+    <string name="login_title">Login</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="phone_number_hint">123456789</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="login">Login</string>
+    <string name="register_question">I have no account?</string>
+    <string name="underlined_register"><u>Register</u></string>
+    <string name="register_title">Register</string>
+    <string name="username">Username</string>
+    <string name="username_hint">Enter username</string>
+    <string name="email">Email</string>
+    <string name="email_hint">Enter Email</string>
+    <string name="age">Age</string>
+    <string name="age_hint">Enter age</string>
+    <string name="confirmation_password">Confirmation password</string>
+    <string name="confirmation_password_hint">Enter confirmation password</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="register">Register</string>
+    <string name="login_question">I Already have account?</string>
+    <string name="underlined_login"><u>Login</u></string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="introduction_title_3">Remarkable quality\ndeserve your trust</string>
+    <string name="introduction_title_2">Search for\nthe service you want</string>
+    <string name="introduction_title_1">Welcome to\nSlamtk app</string>
+    <string name="start">Start</string>
+    <string name="gender_hint">Enter gender</string>
+    <string name="gender">Gender</string>
+    <string name="city">City</string>
+    <string name="city_hint">Select city</string>
+    <string name="send">Send</string>
+    <string name="forget_password_title">Forget password</string>
+    <string name="otp_title">Enter verification code</string>
+    <string name="verification_code">Verification code</string>
+    <string name="underlined_resend_code"><u>Resend verification code</u></string>
+    <string name="sumbit">Submit</string>
+    <string name="reset_password_title">New Password</string>
+    <string name="new_password">New password</string>
+    <string name="save_changes">Save changes</string>
+    <string name="departments">Departments</string>
+    <string name="labs">Labs</string>
+    <string name="departments_items_count">Counnnnnnnnnnnnnnnts</string>
+    <string name="hospitals">Hospitals</string>
+    <string name="pharmacies">Pharmacies</string>
+    <string name="medical_products">Medical products</string>
+    <string name="famous">Famous</string>
+    <string name="show_more">Show more</string>
+    <string name="best_labs">Best labs</string>
+    <string name="best_hospitals">Best hospitals</string>
+    <string name="best_pharmacies">Best pharmacies</string>
+    <string name="more_title">More</string>
+    <string name="labs_title">Labs</string>
+    <string name="search_hint">Search ...</string>
+    <string name="labs_home_reservation_title">Search for labs providing home reservation</string>
+    <string name="online_result_title">Send results online</string>
+    <string name="home_reservation_title">Support home reservation</string>
+    <string name="tests_count">Tests count %1$s</string>
+    <string name="filter_dialog_title">Filter by</string>
+    <string name="filter_by_location">Filter by location</string>
+    <string name="filter_by_rate">Filter by rate</string>
+    <string name="filter_button">Choose</string>
+    <string name="filtered_labs_title">Filtered labs</string>
+    <string name="filtered_by_title">Filtered by:</string>
+    <string name="lab_details_title">Lab details</string>
+    <string name="request_home_reservation">Request home reservation</string>
+    <string name="currency">KWD</string>
+    <string name="book_tests">Book tests</string>
+    <string name="reservation_details_title">Reservation details</string>
+    <string name="reservation_details_home_reservation">I want to make tests at home</string>
+    <string name="total_price">Total price</string>
+    <string name="confirm_reservation">Confirm</string>
+    <string name="thank_you">Thank you</string>
+    <string name="confirmation_message">Reservation confirmed and sent to my reservations</string>
+    <string name="home">Home</string>
+    <string name="my_reservations">My reservations</string>
+    <string name="hospitals_title">Hospitals</string>
+    <string name="special_hospitals">Special hospitals</string>
+    <string name="hospital_details_title">Hospital details</string>
+    <string name="hospital_more_details_title">Hospital information</string>
+    <string name="hospital_more_details_location_title">Location</string>
+    <string name="doctor_details_title">Doctor details</string>
+    <string name="doctor_support_home_reservation">Support home reservation</string>
+    <string name="about_doctor_title">About doctor</string>
+    <string name="work_time">Work time</string>
+    <string name="book_now">Book now</string>
+    <string name="doctor_reservation_username">Username</string>
+    <string name="doctor_reservation_username_hint">Enter username</string>
+    <string name="reservation_date">Reservation date</string>
+    <string name="reservation_date_hint">Enter reservation date</string>
+    <string name="doctor_reservation_phone_number">Phone number</string>
+    <string name="doctor_reservation_phone_number_hint">Enter phone number</string>
+    <string name="attach_report">Attach report</string>
+    <string name="access_medical_files">Access to the medical file?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="home_reservation_q">Home reservation?</string>
+    <string name="pharmacies_title">Pharmacies</string>
+    <string name="special_pharmacies">Special pharmacies</string>
+    <string name="pharmacy_details_title">Pharmacy details</string>
+    <string name="delivery_fare_title">Delivery fare:</string>
+    <string name="send_prescription">Send\nprescription</string>
+    <string name="call_now">Call now\n</string>
+    <string name="search_for_medicine">Search for\nmedicine</string>
+    <string name="medicines">Medicines</string>
+    <string name="medicine_search_dialog_title">Search for medicine</string>
+    <string name="medicine_name_title">Medicine name</string>
+    <string name="medicine_name_hint">Enter medicine name</string>
+    <string name="section_title">Section</string>
+    <string name="medicine_section_hint">Enter section</string>
+    <string name="search">Search</string>
+    <string name="products_title">Medical products</string>
+    <string name="product_details_title">Product details</string>
+    <string name="product_description">Product description</string>
+    <string name="similar_products">Similar products</string>
+    <string name="medical_products_title">Medical products</string>
+    <string name="welcome">Welcome</string>
+    <string name="my_orders">My orders</string>
+    <string name="my_medical_files">My medical files</string>
+    <string name="notifications">Notifications</string>
+    <string name="favourites">Favourites</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="about_us">About us</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="contact_us">Contact us</string>
+    <string name="current_reservation">Current reservation</string>
+    <string name="underlined_add_review"><u>review</u></string>
+    <string name="past_reservation">Past reservation</string>
+    <string name="my_reservations_title">My reservations</string>
+    <string name="my_lab_reservation_details_title">Reservation details</string>
+    <string name="reservation_details">Reservation details</string>
+    <string name="lab_name">Lab name</string>
+    <string name="test_count">Test count</string>
+    <string name="underlined_more"><u>more</u></string>
+    <string name="reservation_number">Reservation number</string>
+    <string name="lab_address">Lab address</string>
+    <string name="reservation_status">Reservation status</string>
+    <string name="rate">Rate</string>
+    <string name="cancel_reservation">Cancel reservation</string>
+    <string name="my_hospital_reservation_details_title">Reservation details</string>
+    <string name="hospital_name">Hospital name</string>
+    <string name="hospital_address">Hospital address</string>
+    <string name="my_orders_title">My orders</string>
+    <string name="order_products_title">Order products</string>
+    <string name="order_details_title">Order details</string>
+    <string name="order_details">Order details</string>
+    <string name="pharmacy_name">Pharmacy name</string>
+    <string name="department">Department</string>
+    <string name="order_number">Order number</string>
+    <string name="order_date">Order date</string>
+    <string name="current_order">Current order</string>
+    <string name="past_order">Past order</string>
+    <string name="order_status">Order status</string>
+    <string name="pharmacy_address">Pharmacy address</string>
+    <string name="famous_name">Famous name</string>
+    <string name="my_medical_files_title">My medical files</string>
+    <string name="medical_file_item_header">Files added by doctor</string>
+    <string name="medical_file_item_name">File for Seifo</string>
+    <string name="new_status">New</string>
+    <string name="empty_field_error_message">Please fill this field</string>
+    <string name="phone_number_length_error_message">Phone must be 9 numbers</string>
+    <string name="username_length_error_message">username must contain at least 3 characters</string>
+    <string name="password_length_error_message">Password must contain at least 6 characters</string>
+    <string name="email_validation_error_message">Email is not valid</string>
+    <string name="age_range_error_massage">You must be older than 16 years</string>
+    <string name="confirmation_password_error_message">Password and it\'s confirmation don\'t match</string>
+    <string name="empty_spinner_field_error_message">Please choose one option</string>
+    <string name="terms_conditions_error_message"><![CDATA[You have to accept terms & conditions to continue]]></string>
+    <string name="otp_length_error_message">OTP must be 4 numbers</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="something_went_wrong_try_again_later">Something went wrong, try again later</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="hospital_reservations_count">Booking count: %1$d</string>
+    <string name="empty_hospitals_text">No hospitals found</string>
+    <string name="tap_to_retry">Tap to Retry</string>
+    <string name="lab_examinations_count">Examinations count: %1$d</string>
+    <string name="empty_labs_text">No labs found</string>
+    <string name="empty_doctors_text">No doctors found</string>
+    <string name="empty_reviews_text">No reviews found</string>
+    <string name="short_saturday" translatable="false">Sa</string>
+    <string name="short_sunday" translatable="false">Su</string>
+    <string name="short_monday" translatable="false">Mo</string>
+    <string name="short_tuesday" translatable="false">Tu</string>
+    <string name="short_wednesday" translatable="false">We</string>
+    <string name="short_thursday" translatable="false">Th</string>
+    <string name="short_friday" translatable="false">Fr</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="specialities">Specialities</string>
+    <string name="empty_specialities_text">No specialities found</string>
+    <string name="all">All</string>
+    <string name="wait_uploading_photo_message">Please wait for your photo to be uploaded</string>
+    <string name="cancel_">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="upload_failed">Upload failed</string>
+    <string name="change_report">Change report</string>
+    <string name="pick_examination_to_continue">Please pick at least one examination to continue</string>
+    <string name="price_with_currency">%1$s KWD</string>
+    <string name="profile_title">Profile</string>
+    <string name="underlined_change_password"><u>Change password</u></string>
+    <string name="save">Save</string>
+    <string name="ok">OK</string>
+    <string name="edit_profile_successful_message">Your profile has been edited successfully</string>
+    <string name="empty_examinations_text">No examination found</string>
+    <string name="message">Message</string>
+    <string name="message_hint">Enter your message here ....</string>
+    <string name="contact_us_title">Contact us</string>
+    <string name="your_message_has_been_received">Your message has been received</string>
+    <string name="hospital_location">Hospital location</string>
+    <string name="empty_reservations_text">No reservations found</string>
+    <string name="short_jan">Jan</string>
+    <string name="short_feb">Feb</string>
+    <string name="short_mar">Mar</string>
+    <string name="short_apr">Apr</string>
+    <string name="short_may">May</string>
+    <string name="short_jun">Jun</string>
+    <string name="short_jul">Jul</string>
+    <string name="short_aug">Aug</string>
+    <string name="short_sep">Sep</string>
+    <string name="short_oct">Oct</string>
+    <string name="short_nov">Nov</string>
+    <string name="short_dec">Dec</string>
+    <string name="examinations_title">Examinations</string>
+    <string name="hospitals_count">More than %1$s hospitals</string>
+    <string name="labs_count">More than %1$s labs</string>
+    <string name="pharmacies_count">More than %1$s pharmacies</string>
+    <string name="medical_products_count">More than %1$s medical products</string>
+    <string name="distance">Distance</string>
+    <string name="empty_special_pharmacies_text">No special pharmacies found</string>
+    <string name="empty_pharmacies_text">No pharmacies found</string>
+    <string name="empty_medicines_text">No medicines found</string>
+    <string name="medicines_title">Medicines</string>
+    <string name="cart_pharmacies">Pharmacies</string>
+    <string name="empty_cart_text">Your cart is empty</string>
+    <string name="cart_title">Cart</string>
+    <string name="continue_buying">Continue</string>
+    <string name="addresses_title">Address details</string>
+    <string name="addresses_main_title">من فضلك اختر العنوان الذى تريد ان تستقبل عليه الطلب</string>
+    <string name="empty_addresses_text">No addresses found</string>
+    <string name="underlined_add_address"><u>Add new Address</u></string>
+    <string name="delivery_address_required">Please pick address to continue</string>
+    <string name="cart_order_details_title">Order details</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Tax</string>
+    <string name="delivery_fees">Delivery fees</string>
+    <string name="promo_code_value">Promo code value</string>
+    <string name="payment_method">Payment method</string>
+    <string name="delivery_address">Address</string>
+    <string name="cash">Cash</string>
+    <string name="submit_order">Submit order</string>
+    <string name="buy_success_message">Your order has been sent my orders</string>
+    <string name="buy_success_message_1">Your order has been sent my orders</string>
+    <string name="delivery_address_hint">Search for your address ...</string>
+    <string name="add_address_title">Add new address</string>
+    <string name="confirm">Confirm</string>
+    <string name="current_address">Your current address</string>
+    <string name="current_address_hint">Your current address</string>
+    <string name="address_title">Address title</string>
+    <string name="address_title_hint">Address title</string>
+    <string name="address_details">Address details</string>
+    <string name="address_details_hint">Building name / department number</string>
+    <string name="picked_location_is_not_supported">Picked location isn\'t supported, pick another one</string>
+    <string name="address_name_length_error_message">address name must contains at least 3 characters</string>
+    <string name="address_details_length_error_message">Address details must contains at least 3 characters</string>
+    <string name="add_address_success_message">Your address has ben added successfully</string>
+    <string name="add_to_cart_different_pharmacies_error">Your cart contains medicines from \'%1$s\' pharmacy, you can\'t add medicines from two different pharmacies</string>
+    <string name="attach_prescription">Attach prescription</string>
+    <string name="send_prescription_title">send prescription</string>
+    <string name="prescription_required">Please attach your prescription to continue</string>
+    <string name="change_prescription">Change prescription</string>
+    <string name="attached_prescription">Attached prescription:</string>
+    <string name="add_to_cart_success_message">Item has been added successfully</string>
+    <string name="add_to_cart_failed_message">Failed to add to cart, try again later</string>
+    <string name="item_already_added">Item you\'re trying to add is already added</string>
+    <string name="section_hint">Pick section</string>
+    <string name="order_number_prefix" translatable="false">#%1$s</string>
+    <string name="empty_orders_text">No orders found</string>
+    <string name="empty_orders_text_1">No orders found</string>
+    <string name="famous_title">Famous</string>
+    <string name="men">Men</string>
+    <string name="women">Women</string>
+    <string name="empty_famous_text">No famous found</string>
+    <string name="empty_brands_text">No brands found</string>
+    <string name="categories">Categories</string>
+    <string name="empty_categories_text">No categories found</string>
+    <string name="empty_products_text">No products found</string>
+    <string name="login_as_guest">Login as guest</string>
+    <string name="add_to_cart_different_items_error">Your cart contains different type of products, sorry you can\'t add this product now</string>
+    <string name="cart_products">Medical products</string>
+    <string name="brands">Brands</string>
+    <string name="brands_title">Brands</string>
+    <string name="aafeety_selections">AAFEETY selections</string>
+    <string name="intro_1">التطبيـق الاول من نـوعـة الذي يشمل كـافـة الخـدمات الطبية من خلال محاورة الاربعة</string>
+    <string name="intro_2">أكثـر المنتجــات التجميليـة والطبيـــــة التـي يستخـدمهــــا مشاهيــر التواصــل الاجتماعـــي</string>
+    <string name="intro_3">منصـة العروض والخصومـات و تشمـل أكبـر بـاقة من المنتجـات والخدمــات بأفضل الأسعار وأقلها</string>
+    <string name="area">Area</string>
+    <string name="best_labs_1">Best labs</string>
+    <string name="username_length_error_message_1">username must contains maximum 30 characters</string>
+    <string name="age_range_error_massage_1">Sorry, max age you can enter is 90</string>
+    <string name="social_media_link_error_message">Sorry this link is not available now</string>
+    <string name="doctor_name">Doctor name</string>
+    <string name="doctor_speciality">Doctor speciality</string>
+    <string name="doctor_time">Doctor time</string>
+    <string name="product_details_header">Product details</string>
+    <string name="about_product_title">Product description</string>
+    <string name="in_active_user_error_message">Your account deactivated, please contact our administrators</string>
+    <string name="question_from">Question from:</string>
+    <string name="answer">Answer</string>
+    <string name="doctor_answer">Doctor\'s answer</string>
+    <string name="doctor_title">Doctor title</string>
+    <string name="empty_questions_text">No questions found</string>
+    <string name="question_details_header">Doctor\'s answer</string>
+    <string name="speciality">Speciality</string>
+    <string name="speciality_hint">Pick speciality</string>
+    <string name="question_hint">Enter your message here ....</string>
+    <string name="question">Question</string>
+    <string name="ask_doctor_header_message">Get answer for free</string>
+    <string name="ask_now">Ask now</string>
+    <string name="beauty">Beauty</string>
+    <string name="medical">Medical</string>
+    <string name="empty_coupon_text">No coupons found</string>
+    <string name="coupons_title">Coupons</string>
+    <string name="coupon_details_title">Coupon details</string>
+    <string name="provided_by">Provided by: %1$s</string>
+    <string name="my_coupons_title">My coupons</string>
+    <string name="my_coupons">My coupons</string>
+    <string name="notification_channel_id" translatable="false">AafeetyChannel</string>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="lab_details_tabs">
+        <item>Tests</item>
+        <item>Reviews</item>
+    </string-array>
+
+    <string-array name="hospital_details_tabs">
+        <item>Details</item>
+        <item>Doctors</item>
+        <item>Reviews</item>
+    </string-array>
+
+    <string-array name="my_reservations_tabs_titles">
+        <item>Labs</item>
+        <item>Hospitals</item>
+    </string-array>
+
+    <string-array name="my_orders_tabs_titles">
+        <item>Pharmacies</item>
+        <item>Medical products</item>
+        <item>Famous products</item>
+    </string-array>
+
+    <string-array name="famous_tabs_titles">
+        <item>Famous</item>
+        <item>Brands</item>
+    </string-array>
+
+    <string-array name="questions_tabs">
+        <item>All</item>
+        <item>Filtered</item>
+    </string-array>
+
+    <string-array name="days_of_week">
+        <item>@string/saturday</item>
+        <item>@string/sunday</item>
+        <item>@string/monday</item>
+        <item>@string/tuesday</item>
+        <item>@string/wednesday</item>
+        <item>@string/thursday</item>
+        <item>@string/friday</item>
+    </string-array>
+
+    <string-array name="short_months">
+        <item>@string/short_jan</item>
+        <item>@string/short_feb</item>
+        <item>@string/short_mar</item>
+        <item>@string/short_apr</item>
+        <item>@string/short_may</item>
+        <item>@string/short_jun</item>
+        <item>@string/short_jul</item>
+        <item>@string/short_aug</item>
+        <item>@string/short_sep</item>
+        <item>@string/short_oct</item>
+        <item>@string/short_nov</item>
+        <item>@string/short_dec</item>
+    </string-array>
+</resources>

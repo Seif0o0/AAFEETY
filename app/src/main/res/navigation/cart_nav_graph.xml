@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cart_nav_graph"
+    app:startDestination="@id/cartFragment">
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="code_grow.afeety.app.fragment.CartFragment"
+        android:label="CartFragment">
+        <action
+            android:id="@+id/action_cartFragment_to_addressesFragment"
+            app:destination="@id/addressesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressesFragment"
+        android:name="code_grow.afeety.app.fragment.AddressesFragment"
+        android:label="AddressesFragment">
+        <action
+            android:id="@+id/action_addressesFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+        <argument
+            android:name="medicines"
+            app:argType="code_grow.afeety.app.local_model.LocalMedicine[]" />
+        <action
+            android:id="@+id/action_addressesFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.OrderDetailsFragment"
+        android:label="OrderDetailsFragment">
+        <argument
+            android:name="medicines"
+            app:argType="code_grow.afeety.app.local_model.LocalMedicine[]" />
+        <argument
+            android:name="addressId"
+            app:argType="integer" />
+        <argument
+            android:name="addressDetails"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="code_grow.afeety.app.fragment.AddAddressFragment"
+        android:label="AddAddressFragment">
+        <action
+            android:id="@+id/action_addAddressFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment"
+            app:popUpTo="@id/addressesFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="medicines"
+            app:argType="code_grow.afeety.app.local_model.LocalMedicine[]" />
+    </fragment>
+</navigation>

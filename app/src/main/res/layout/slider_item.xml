@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sliderItem"
+            type="code_grow.afeety.app.model.SliderItem" />
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnSliderItemClickListener" />
+    </data>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/slider_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="@{ () -> clickListener.onSliderItemClicked(sliderItem)}"
+
+        android:src="@drawable/item_test"
+        app:riv_corner_radius="@dimen/_8sdp"
+        app:rounded_image_url="@{sliderItem.image}" />
+</layout>

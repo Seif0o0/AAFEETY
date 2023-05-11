@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="schedule"
+            type="code_grow.afeety.app.model.DoctorSchedule" />
+
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnScheduleItemClickListener" />
+
+
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:onClick="@{() -> clickListener.onScheduleClicked(schedule)}"
+        android:orientation="vertical"
+        app:is_clicked="@{schedule.clicked}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:fontFamily="@font/tajwal_medium"
+            android:textColor="@color/hospitals_details_text_color"
+            android:textSize="@dimen/_10ssp"
+            app:is_clicked="@{schedule.clicked}"
+            app:schedule_day="@{schedule.dayNumber}"
+            tools:text="Sa" />
+    </LinearLayout>
+</layout>

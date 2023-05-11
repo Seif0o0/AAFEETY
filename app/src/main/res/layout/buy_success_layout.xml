@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/labs_background_color"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/confirmation_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/tajwal_bold"
+                android:text="@string/thank_you"
+                android:textColor="@color/labs_main_text_color"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toTopOf="@id/top_guideline" />
+
+            <ImageView
+                android:id="@+id/confirmation_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/ic_buy_success_icon"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/confirmation_title" />
+
+            <TextView
+                android:id="@+id/confirmation_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:fontFamily="@font/tajwal_bold"
+                android:gravity="center"
+                android:text="@string/buy_success_message"
+                android:textColor="@color/labs_main_text_color"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/confirmation_icon" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/my_orders_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_39sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/tajwal_medium"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="@dimen/_105sdp"
+                android:text="@string/my_orders"
+                android:textAllCaps="false"
+                android:textColor="@color/labs_background_color"
+                android:textSize="@dimen/_12ssp"
+                android:theme="@style/Theme.MaterialComponents"
+                android:visibility="visible"
+                app:backgroundTint="@color/labs_main_color"
+                app:cornerRadius="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+                app:layout_constraintEnd_toStartOf="@id/home_button"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/confirmation_message" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/home_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_39sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/tajwal_medium"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="@dimen/_105sdp"
+                android:text="@string/home"
+                android:textAllCaps="false"
+                android:textColor="@color/labs_main_color"
+                android:textSize="@dimen/_12ssp"
+                android:theme="@style/Theme.MaterialComponents"
+                android:visibility="visible"
+                app:backgroundTint="@color/labs_background_color"
+                app:cornerRadius="@dimen/_20sdp"
+                app:layout_constraintBaseline_toBaselineOf="@id/my_orders_button"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toEndOf="@id/my_orders_button"
+                app:strokeColor="@color/labs_main_color"
+                app:strokeWidth="@dimen/_1sdp" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/_15sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_15sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

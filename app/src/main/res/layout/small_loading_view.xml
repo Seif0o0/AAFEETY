@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="resource"
+            type="androidx.lifecycle.LiveData&lt;code_grow.afeety.app.retrofit.Resource>" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@color/home_background_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:translationZ="2dp"
+        app:progress_state="@{resource}">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/loader"
+            style="@style/SpinKitView.Circle"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/labs_main_color" />
+
+
+    </FrameLayout>
+</layout>

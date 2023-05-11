@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/splash_introduction_main_background_color">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="@id/view_pager_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/view_pager_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="@color/splash_introduction_inactive_indicator_color"
+            app:dotsCornerRadius="8dp"
+            app:dotsSize="@dimen/_5sdp"
+            app:dotsSpacing="@dimen/_2sdp"
+            app:dotsWidthFactor="2.5"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="@id/view_pager"
+            app:layout_constraintEnd_toEndOf="@id/view_pager"
+            app:layout_constraintStart_toStartOf="@id/view_pager"
+            app:progressMode="true"
+            app:selectedDotColor="@color/splash_introduction_active_indicator_color" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/rounded_button_drawable"
+            android:fontFamily="@font/tajwal_medium"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:paddingStart="@dimen/_35sdp"
+            android:paddingEnd="@dimen/_35sdp"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textColor="@color/login_register_main_background_color"
+            android:textSize="@dimen/_12ssp"
+            android:theme="@style/Theme.MaterialComponents"
+            app:backgroundTint="@null"
+            app:cornerRadius="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_pager_indicator" />
+
+        <TextView
+            android:id="@+id/skip_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="center"
+            android:text="@string/skip"
+            android:textColor="@color/splash_introduction_skip_btn_color"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/next_button"
+            app:layout_constraintStart_toStartOf="@id/next_button"
+            app:layout_constraintTop_toBottomOf="@id/next_button"
+            app:layout_constraintVertical_bias="0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

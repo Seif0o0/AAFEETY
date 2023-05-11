@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav_ask_doctor"
+    app:startDestination="@id/askDoctorFragment">
+
+    <fragment
+        android:id="@+id/askDoctorFragment"
+        android:name="code_grow.afeety.app.fragment.AskDoctorFragment"
+        android:label="AskDoctorFragment" >
+        <action
+            android:id="@+id/action_askDoctorFragment_to_questionDetailsFragment"
+            app:destination="@id/questionDetailsFragment" />
+        <action
+            android:id="@+id/action_askDoctorFragment_to_sendQuestionFragment"
+            app:destination="@id/sendQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.QuestionDetailsFragment"
+        android:label="QuestionDetailsFragment" >
+        <argument
+            android:name="question"
+            app:argType="code_grow.afeety.app.model.Question" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendQuestionFragment"
+        android:name="code_grow.afeety.app.fragment.SendQuestionFragment"
+        android:label="SendQuestionFragment" />
+</navigation>

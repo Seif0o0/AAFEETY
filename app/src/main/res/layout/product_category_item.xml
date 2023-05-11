@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="category"
+            type="code_grow.afeety.app.model.ProductCategory" />
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnProductCategoryItemCLickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="@dimen/_54sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:onClick="@{ () -> clickListener.onProductCategoryClicked(category)}">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/speciality_image"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_all_specialities"
+            app:is_speciality_clicked="@{category.clicked}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/_50sdp"
+            app:riv_mutate_background="true"
+            app:speciality_image_url="@{category.image}" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@{category.name}"
+            android:textSize="@dimen/_12ssp"
+            app:autoSizeMaxTextSize="@dimen/_12ssp"
+            app:autoSizeMinTextSize="@dimen/_8ssp"
+            app:autoSizeStepGranularity="@dimen/_1ssp"
+            app:autoSizeTextType="uniform"
+            app:clicked_speciality_color="@{category.clicked}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/speciality_image"
+            tools:text="Make up" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

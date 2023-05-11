@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="product"
+            type="code_grow.afeety.app.model.SmallProduct" />
+
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnProductOrderProductItemCLickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/home_white"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/tajwal_medium"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="@{product.name}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/home_black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toTopOf="@id/top_guideline"
+                tools:text="Medicine name" />
+
+
+            <ImageView
+                android:id="@+id/product_price_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:src="@drawable/ic_lab_test_price"
+                app:layout_constraintStart_toStartOf="@id/product_name"
+                app:layout_constraintTop_toBottomOf="@id/product_name" />
+
+            <TextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/tajwal_bold"
+                android:textColor="@color/labs_main_color"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="@id/product_price_icon"
+                app:layout_constraintStart_toEndOf="@id/product_price_icon"
+                app:layout_constraintTop_toTopOf="@id/product_price_icon"
+                app:price="@{product.price}"
+                tools:text="30" />
+
+            <TextView
+                android:id="@+id/currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:fontFamily="@font/tajwal_medium"
+                android:text="@string/currency"
+                android:textColor="@color/labs_main_text_color"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBaseline_toBaselineOf="@id/product_price"
+                app:layout_constraintStart_toEndOf="@id/product_price" />
+
+            <View
+                android:id="@+id/horizontal_line"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/labs_lines_color"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/product_price_icon" />
+
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/product_section_icon"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="@dimen/_11sdp"-->
+            <!--                android:src="@drawable/ic_hospital_reservation_department"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/start_guideline"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/horizontal_line" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/product_section"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_3sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_4sdp"-->
+            <!--                android:ellipsize="end"-->
+            <!--                android:fontFamily="@font/tajwal_medium"-->
+            <!--                android:gravity="start"-->
+            <!--                android:maxLines="1"-->
+            <!--                android:text="@{product.categoryName}"-->
+            <!--                android:textAlignment="viewStart"-->
+            <!--                android:textColor="@color/labs_main_text_color"-->
+            <!--                android:textSize="@dimen/_10ssp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/product_section_icon"-->
+            <!--                app:layout_constraintEnd_toStartOf="@id/end_guideline"-->
+            <!--                app:layout_constraintStart_toEndOf="@id/product_section_icon"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/product_section_icon"-->
+            <!--                tools:text="Heart" />-->
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/center_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <ImageView
+                android:id="@+id/famous_name_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:src="@drawable/ic_pharmacy_order_number"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_line" />
+
+            <TextView
+                android:id="@+id/famous_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/tajwal_medium"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@{product.famousName}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/labs_main_text_color"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@id/famous_name_icon"
+                app:layout_constraintEnd_toStartOf="@id/center_guideline"
+                app:layout_constraintStart_toEndOf="@id/famous_name_icon"
+                app:layout_constraintTop_toTopOf="@id/famous_name_icon"
+                tools:text="Influencer" />
+
+
+            <ImageView
+                android:id="@+id/product_section_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:src="@drawable/ic_hospital_reservation_department"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+                app:layout_constraintEnd_toStartOf="@id/product_section"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/center_guideline"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_line" />
+
+            <TextView
+                android:id="@+id/product_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/tajwal_medium"
+                android:maxLines="1"
+                android:textColor="@color/labs_main_text_color"
+                android:textSize="@dimen/_10ssp"
+                android:text="@{product.categoryName}"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/product_section_icon"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toEndOf="@id/product_section_icon"
+                app:layout_constraintTop_toTopOf="@id/product_section_icon"
+                tools:text="Heart" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_8sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav_app_magazine"
+    app:startDestination="@id/appMagazineFragment">
+
+    <fragment
+        android:id="@+id/appMagazineFragment"
+        android:name="code_grow.afeety.app.fragment.AppMagazineFragment"
+        android:label="AppMagazineFragment" />
+</navigation>

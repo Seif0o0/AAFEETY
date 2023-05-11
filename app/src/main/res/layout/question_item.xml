@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="questionDetails"
+            type="code_grow.afeety.app.model.Question" />
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnQuestionItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:background="@color/ask_doctor_second_mini_background_color">
+
+        <TextView
+            android:id="@+id/question_from_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="start"
+            android:text="@string/question_from"
+            android:textAlignment="viewStart"
+            android:textColor="@color/ask_doctor_details_text_color"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_guideline" />
+
+        <TextView
+            android:id="@+id/question_from_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@{questionDetails.username}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/ask_doctor_main_color"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBaseline_toBaselineOf="@id/question_from_label"
+            app:layout_constraintEnd_toStartOf="@id/speciality"
+            app:layout_constraintStart_toEndOf="@id/question_from_label"
+            tools:text="Seif" />
+
+        <TextView
+            android:id="@+id/speciality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="end"
+            android:text="@{questionDetails.categoryName}"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/ask_doctor_details_text_color"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/question_from_value"
+            app:layout_constraintTop_toTopOf="@id/top_guideline"
+            tools:text="Heart" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="start"
+            android:text="@{questionDetails.question}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/ask_doctor_details_text_color"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/question_from_label"
+            tools:text="this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question this is question " />
+
+        <View
+            android:id="@+id/horizontal_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/ask_doctor_second_lines_color"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/question" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/doctor_photo"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_line"
+            app:riv_corner_radius="@dimen/_8sdp"
+            app:rounded_image_url="@{questionDetails.image}"
+            tools:src="@drawable/item_test" />
+
+        <TextView
+            android:id="@+id/answer_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="start"
+            android:text="@string/answer"
+            android:textAlignment="viewStart"
+            android:textColor="@color/ask_doctor_details_text_color"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintStart_toEndOf="@id/doctor_photo"
+            app:layout_constraintTop_toTopOf="@id/doctor_photo" />
+
+        <TextView
+            android:id="@+id/doctor_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@{questionDetails.answerer}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/hospitals_main_text_color"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/doctor_answer"
+            app:layout_constraintStart_toStartOf="@id/answer_title"
+            app:layout_constraintTop_toBottomOf="@id/answer_title"
+            tools:text="doctor name" />
+
+        <ImageView
+            android:id="@+id/time_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            app:index="@{0}"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+            app:layout_constraintStart_toStartOf="@id/answer_title"
+            app:layout_constraintTop_toBottomOf="@id/doctor_name"
+            tools:src="@drawable/ic_lab_review_time" />
+
+        <TextView
+            android:id="@+id/time_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:fontFamily="@font/tajwal_medium"
+            android:textColor="@color/labs_details_text_color"
+            android:textSize="@dimen/_8ssp"
+            app:formatted_booking_date="@{questionDetails.answerTime}"
+            app:layout_constraintBottom_toBottomOf="@id/time_icon"
+            app:layout_constraintStart_toEndOf="@id/time_icon"
+            app:layout_constraintTop_toTopOf="@id/time_icon"
+            tools:text="2 mins ago" />
+
+        <TextView
+            android:id="@+id/doctor_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:fontFamily="@font/tajwal_medium"
+            android:gravity="start"
+            android:onClick="@{()->clickListener.onQuestionClicked(questionDetails)}"
+            android:text="@string/doctor_answer"
+            android:textAlignment="viewStart"
+            android:textColor="@color/ask_doctor_main_color"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@id/time_icon"
+            app:layout_constraintEnd_toStartOf="@id/right_arrow"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/doctor_name"
+            app:layout_constraintTop_toTopOf="@id/answer_title" />
+
+        <ImageView
+            android:id="@+id/right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->clickListener.onQuestionClicked(questionDetails)}"
+            android:scaleX="-1"
+            android:src="@drawable/ic_blue_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/doctor_answer"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintTop_toTopOf="@id/doctor_answer" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_8sdp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

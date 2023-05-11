@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="code_grow.afeety.app.view_model.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_fragments_top_rounded_background">
+
+        <!-- header container -->
+
+        <View
+            android:id="@+id/header_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_220sdp"
+            android:background="@drawable/rounded_header_drawable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/more_options_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more_options"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_guideline" />
+
+        <TextView
+            android:id="@+id/home_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:fontFamily="@font/tajwal_bold"
+            android:gravity="center"
+            android:text="@string/home_title"
+            android:textColor="@color/home_white"
+            android:textSize="@dimen/_17ssp"
+            app:layout_constraintBottom_toBottomOf="@id/more_options_icon"
+            app:layout_constraintEnd_toStartOf="@id/cart_icon"
+            app:layout_constraintStart_toEndOf="@id/more_options_icon"
+            app:layout_constraintTop_toTopOf="@id/top_guideline" />
+
+        <ImageView
+            android:id="@+id/cart_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cart"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_guideline" />
+
+        <View
+            android:id="@+id/header_image_fake_view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="@id/header_view"
+            app:layout_constraintEnd_toEndOf="@id/header_view"
+            app:layout_constraintStart_toStartOf="@id/header_view"
+            app:layout_constraintTop_toBottomOf="@id/more_options_icon"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <View
+            android:id="@+id/scroll_fake_view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="@id/header_image_fake_view"
+            app:layout_constraintEnd_toEndOf="@id/header_view"
+            app:layout_constraintStart_toStartOf="@id/header_view"
+            app:layout_constraintTop_toBottomOf="@id/more_options_icon"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <View
+            android:id="@+id/home_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/main_fragments_top_rounded_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_image_fake_view" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:cardBackgroundColor="@color/home_background_color"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="0dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/scroll_fake_view"
+            app:layout_constraintVertical_bias="0">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/slider_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:constraint_referenced_ids="view_pager_container,top_view_pager_indicator" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/view_pager_container"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_120sdp"
+                            app:cardBackgroundColor="@color/home_white"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.viewpager2.widget.ViewPager2
+                                android:id="@+id/top_view_pager"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                            android:id="@+id/top_view_pager_indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:visibility="visible"
+                            app:dotsColor="@color/home_main_color"
+                            app:dotsCornerRadius="@dimen/_10sdp"
+                            app:dotsSize="@dimen/_8sdp"
+                            app:dotsSpacing="@dimen/_3sdp"
+                            app:dotsStrokeColor="@color/home_lines_color"
+                            app:dotsStrokeWidth="@dimen/_1sdp"
+                            app:layout_constraintEnd_toEndOf="@id/view_pager_container"
+                            app:layout_constraintStart_toStartOf="@id/view_pager_container"
+                            app:layout_constraintTop_toBottomOf="@id/view_pager_container" />
+
+                        <TextView
+                            android:id="@+id/departments"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajwal_bold"
+                            android:gravity="center"
+                            android:text="@string/departments"
+                            android:textColor="@color/home_black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/top_view_pager_indicator" />
+
+
+                        <HorizontalScrollView
+                            android:id="@+id/horizontal_scrollview"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:scrollbars="none"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/departments">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/labs_container"
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_2sdp"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    android:layout_marginBottom="@dimen/_4sdp"
+                                    app:cardBackgroundColor="@color/home_white"
+                                    app:cardCornerRadius="@dimen/_8sdp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/labs_logo"
+                                            android:layout_width="@dimen/_65sdp"
+                                            android:layout_height="@dimen/_65sdp"
+                                            android:layout_marginStart="@dimen/_8sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_8sdp"
+                                            android:src="@mipmap/lab"
+                                            app:layout_constrainedWidth="true"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/labs_title"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_4sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_4sdp"
+                                            android:layout_marginBottom="@dimen/_8sdp"
+                                            android:ellipsize="end"
+                                            android:fontFamily="@font/tajwal_medium"
+                                            android:gravity="center"
+                                            android:maxLines="1"
+                                            android:text="@string/labs"
+                                            android:textColor="@color/home_labs_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/labs_logo" />
+
+                                        <TextView
+                                            android:id="@+id/labs_count"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_4sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_4sdp"
+                                            android:layout_marginBottom="@dimen/_8sdp"
+                                            android:fontFamily="@font/tajwal_medium"
+                                            android:gravity="center"
+                                            android:text="@string/departments_items_count"
+                                            android:textColor="@color/home_details_color"
+                                            android:textSize="@dimen/_10ssp"
+                                            android:visibility="gone"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/labs_title" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/hospitals_container"
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    app:cardBackgroundColor="@color/home_white"
+                                    app:cardCornerRadius="@dimen/_8sdp"
+                                    app:layout_constraintStart_toEndOf="@id/labs_container"
+                                    app:layout_constraintTop_toTopOf="@id/labs_container">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/hospitals_logo"
+                                            android:layout_width="@dimen/_65sdp"
+                                            android:layout_height="@dimen/_65sdp"
+                                            android:layout_marginStart="@dimen/_8sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_8sdp"
+                                            android:src="@mipmap/hospitals"
+                                            app:layout_constrainedWidth="true"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:tint="@color/home_main_color" />
+
+                                        <TextView
+                                            android:id="@+id/hospitals_title"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_4sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_4sdp"
+                                            android:layout_marginBottom="@dimen/_8sdp"
+                                            android:fontFamily="@font/tajwal_medium"
+                                            android:gravity="center"
+                                            android:text="@string/hospitals"
+                                            android:textColor="@color/home_hospitals_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/hospitals_logo" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/pharmacies_container"
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    app:cardBackgroundColor="@color/home_white"
+                                    app:cardCornerRadius="@dimen/_8sdp"
+                                    app:layout_constraintStart_toEndOf="@id/hospitals_container"
+                                    app:layout_constraintTop_toTopOf="@id/labs_container">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/pharmacies_logo"
+                                            android:layout_width="@dimen/_65sdp"
+                                            android:layout_height="@dimen/_65sdp"
+                                            android:layout_marginStart="@dimen/_8sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_8sdp"
+                                            android:src="@mipmap/pharmacy"
+                                            app:layout_constrainedWidth="true"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/pharmacies_title"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_4sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_4sdp"
+                                            android:layout_marginBottom="@dimen/_8sdp"
+                                            android:fontFamily="@font/tajwal_medium"
+                                            android:gravity="center"
+                                            android:text="@string/pharmacies"
+                                            android:textColor="@color/home_pharmacies_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/pharmacies_logo" />
+
+                                        <TextView
+                                            android:id="@+id/pharmacies_count"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_4sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_4sdp"
+                                            android:layout_marginBottom="@dimen/_8sdp"
+                                            android:fontFamily="@font/tajwal_medium"
+                                            android:gravity="center"
+                                            android:text="@string/departments_items_count"
+                                            android:textColor="@color/home_details_color"
+                                            android:textSize="@dimen/_10ssp"
+                                            android:visibility="gone"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/pharmacies_title" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/medical_products_container"
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    app:cardBackgroundColor="@color/home_white"
+                                    app:cardCornerRadius="@dimen/_8sdp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/pharmacies_container"
+                                    app:layout_constraintTop_toTopOf="@id/labs_container">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/medical_products_logo"
+                                            android:layout_width="@dimen/_65sdp"
+                                            android:layout_height="@dimen/_65sdp"
+                                            android:layout_marginStart="@dimen/_8sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_8sdp"
+                                            android:src="@mipmap/medical_products"
+                                            app:layout_constrainedWidth="true"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/medical_products_title"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_4sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_4sdp"
+                                            android:layout_marginBottom="@dimen/_8sdp"
+                                            android:fontFamily="@font/tajwal_medium"
+                                            android:gravity="center"
+                                            android:text="@string/medical_products"
+                                            android:textColor="@color/home_medical_products_text_color"
+                                            android:textSize="@dimen/_12ssp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/medical_products_logo" />
+
+                                        <TextView
+                                            android:id="@+id/medical_products_count"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_4sdp"
+                                            android:layout_marginTop="@dimen/_8sdp"
+                                            android:layout_marginEnd="@dimen/_4sdp"
+                                            android:layout_marginBottom="@dimen/_8sdp"
+                                            android:fontFamily="@font/tajwal_medium"
+                                            android:gravity="center"
+                                            android:text="@string/departments_items_count"
+                                            android:textColor="@color/home_details_color"
+                                            android:textSize="@dimen/_10ssp"
+                                            android:visibility="gone"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@id/medical_products_title" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+                                </androidx.cardview.widget.CardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </HorizontalScrollView>
+
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/famous_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:constraint_referenced_ids="famous_people,show_more_famous,famous_people_list" />
+
+                        <TextView
+                            android:id="@+id/famous_people"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_bold"
+                            android:gravity="center"
+                            android:text="@string/famous"
+                            android:textColor="@color/home_black"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toStartOf="@id/show_more_famous"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/horizontal_scrollview" />
+
+                        <TextView
+                            android:id="@+id/show_more_famous"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/show_more"
+                            android:textColor="@color/home_main_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintBaseline_toBaselineOf="@id/famous_people"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/famous_people" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/famous_people_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/famous_people"
+                            tools:listitem="@layout/famous_people_item" />
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/labs_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:constraint_referenced_ids="best_labs,show_more_best_labs,best_labs_list" />
+
+                        <TextView
+                            android:id="@+id/best_labs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_bold"
+                            android:gravity="center"
+                            android:text="@string/best_labs"
+                            android:textColor="@color/home_labs_text_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toStartOf="@id/show_more_best_labs"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/famous_people_list" />
+
+                        <TextView
+                            android:id="@+id/show_more_best_labs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/show_more"
+                            android:textColor="@color/home_labs_text_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintBaseline_toBaselineOf="@id/best_labs"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/best_labs" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/best_labs_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/best_labs"
+                            tools:listitem="@layout/horizontal_labs_item" />
+
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/hospitals_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:constraint_referenced_ids="best_hospitals,show_more_best_hospitals,best_hospitals_list" />
+
+                        <TextView
+                            android:id="@+id/best_hospitals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_bold"
+                            android:gravity="center"
+                            android:text="@string/best_hospitals"
+                            android:textColor="@color/home_hospitals_text_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toStartOf="@id/show_more_best_hospitals"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/best_labs_list" />
+
+                        <TextView
+                            android:id="@+id/show_more_best_hospitals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/show_more"
+                            android:textColor="@color/home_hospitals_text_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintBaseline_toBaselineOf="@id/best_hospitals"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/best_hospitals" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/best_hospitals_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/best_hospitals"
+                            tools:listitem="@layout/horizontal_hospitals_item" />
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/pharmacies_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            app:constraint_referenced_ids="best_pharmacies,show_more_best_pharmacies,best_pharmacies_list" />
+
+                        <TextView
+                            android:id="@+id/best_pharmacies"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/tajwal_bold"
+                            android:gravity="center"
+                            android:text="@string/best_pharmacies"
+                            android:textColor="@color/home_pharmacies_text_color"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toStartOf="@id/show_more_best_pharmacies"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/best_hospitals_list" />
+
+                        <TextView
+                            android:id="@+id/show_more_best_pharmacies"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/tajwal_medium"
+                            android:gravity="center"
+                            android:text="@string/show_more"
+                            android:textColor="@color/home_pharmacies_text_color"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintBaseline_toBaselineOf="@id/best_pharmacies"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/best_pharmacies" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/best_pharmacies_list"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/scroll_bottom_guideline"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/best_pharmacies"
+                            app:layout_constraintVertical_bias="0"
+                            tools:listitem="@layout/pharmacies_item" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/scroll_bottom_guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_end="@dimen/_15sdp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </ScrollView>
+
+
+                <include
+                    android:id="@+id/home_slider_error_view"
+                    layout="@layout/small_error_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_138sdp"
+                    android:layout_gravity="top"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:visibility="gone"
+                    app:resource="@{viewModel.sliderResponse}" />
+
+                <include
+                    android:id="@+id/home_slider_loading_view"
+                    layout="@layout/small_loading_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_138sdp"
+                    android:layout_gravity="top"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:visibility="gone"
+                    app:resource="@{viewModel.sliderResponse}" />
+
+                <include
+                    android:id="@+id/home_data_error_view"
+                    layout="@layout/error_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_138sdp"
+                    android:visibility="gone"
+                    app:resource="@{viewModel.homeResponse}" />
+
+                <include
+                    android:id="@+id/home_data_loading_view"
+                    layout="@layout/loading_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_138sdp"
+                    android:visibility="gone"
+                    app:resource="@{viewModel.homeResponse}" />
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_15sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_15sdp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

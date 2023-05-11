@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="speciality"
+            type="code_grow.afeety.app.model.Speciality" />
+
+        <variable
+            name="clickListener"
+            type="code_grow.afeety.app.adapter.OnDoctorSpecialityItemCLickListener" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:onClick="@{ () -> clickListener.onSpecialityClicked(speciality)}"
+        app:is_clicked="@{speciality.clicked}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:fontFamily="@font/tajwal_medium"
+            android:text="@{speciality.name}"
+            android:textColor="@color/hospitals_details_text_color"
+            android:textSize="@dimen/_12ssp"
+            app:is_clicked="@{speciality.clicked}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Heart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_nav_home"
+        android:icon="@mipmap/home_icon"
+        android:title="@string/home_title" />
+    <item
+        android:id="@+id/bottom_nav_ask_doctor"
+        android:icon="@mipmap/ask_doctor_icon"
+        android:title="@string/ask_doctor_title" />
+    <item
+        android:id="@+id/bottom_nav_medical_events"
+        android:icon="@drawable/ic_nav_bottom_medical_events"
+        android:title="@string/medical_events_title" />
+    <item
+        android:id="@+id/bottom_nav_app_magazine"
+        android:icon="@mipmap/magazine_icon"
+        android:title="@string/app_magazine_title" />
+</menu>

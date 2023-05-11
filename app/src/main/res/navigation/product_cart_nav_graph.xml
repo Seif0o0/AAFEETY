@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/product_cart_nav_graph"
+    app:startDestination="@id/productCartFragment">
+
+    <fragment
+        android:id="@+id/productCartFragment"
+        android:name="code_grow.afeety.app.fragment.ProductCartFragment"
+        android:label="ProductCartFragment" >
+        <action
+            android:id="@+id/action_productCartFragment_to_productAddressesFragment"
+            app:destination="@id/productAddressesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productAddressesFragment"
+        android:name="code_grow.afeety.app.fragment.ProductAddressesFragment"
+        android:label="ProductAddressesFragment" >
+        <action
+            android:id="@+id/action_productAddressesFragment_to_productAddAddressFragment"
+            app:destination="@id/productAddAddressFragment" />
+        <action
+            android:id="@+id/action_productAddressesFragment_to_productOrderDetailsFragment"
+            app:destination="@id/productOrderDetailsFragment" />
+        <argument
+            android:name="products"
+            app:argType="code_grow.afeety.app.local_model.LocalProduct[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/productAddAddressFragment"
+        android:name="code_grow.afeety.app.fragment.ProductAddAddressFragment"
+        android:label="ProductAddAddressFragment" >
+        <argument
+            android:name="products"
+            app:argType="code_grow.afeety.app.local_model.LocalProduct[]" />
+        <action
+            android:id="@+id/action_productAddAddressFragment_to_productOrderDetailsFragment"
+            app:destination="@id/productOrderDetailsFragment"
+            app:popUpTo="@id/productAddressesFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/productOrderDetailsFragment"
+        android:name="code_grow.afeety.app.fragment.ProductOrderDetailsFragment"
+        android:label="ProductOrderDetailsFragment" >
+        <argument
+            android:name="products"
+            app:argType="code_grow.afeety.app.local_model.LocalProduct[]" />
+        <argument
+            android:name="addressId"
+            app:argType="integer" />
+        <argument
+            android:name="addressDetails"
+            app:argType="string" />
+        <argument
+            android:name="deliveryFees"
+            app:argType="string" />
+    </fragment>
+</navigation>
